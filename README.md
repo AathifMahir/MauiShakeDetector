@@ -1,5 +1,5 @@
 
-<img src="https://github.com/AathifMahir/MauiShakeDetector/blob/master/images/icon_with_text.png" alt="MauiIcons_logo" height=225 width=550>
+<img src="https://github.com/AathifMahir/MauiShakeDetector/blob/master/images/icon_with_text.png" alt="MauiIcons_logo" height=200 width=450>
 
 
 # .Net Maui Shake Detector

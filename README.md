@@ -1,6 +1,7 @@
 
 <img src="https://github.com/AathifMahir/MauiShakeDetector/blob/master/images/icon_with_text.png" alt="MauiIcons_logo" height=200 width=450>
 
+[![AathifMahir.Maui.MauiShakeDetector](https://img.shields.io/nuget/v/AathifMahir.Maui.MauiShakeDetector)](https://www.nuget.org/packages/AathifMahir.Maui.MauiShakeDetector/)
 
 # .Net Maui Shake Detector
 

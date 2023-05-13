@@ -68,18 +68,18 @@ using MauiShakeDetector;
 
 | Parameters | Type | Description |
 |               :---:               |    :---:   |            :---:                                                                               |
-|`IsSupported` | `bool` | Indicating Whether ShakeDetector is Supported on this Device |
-|`IsMonitoring` | `bool` | Indicating Whether ShakeDetector is Already Monitoring |
-|`IsHapticsSupported` | `bool` | Indicating Whether Haptics Supported in this Device |
-|`IsHapticsEnabled` | `bool` | Indicating Whether Haptics is Enabled |
-|`ShakeThresholdGravity` | `double` | Get or Set the Value of Shake Detection Threshold |
-|`ShakeIntervalInMilliseconds` | `TimeSpan` | Get or Set the value of Minimum Delay betweem Shakes |
-|`ShakeResetIntervalInMilliseconds` | `TimeSpan` | Get or Set the Value of Shake Reset Interval in Milliseconds |
-|`MinimumShakeCount` | `int` | Get or Set the Value for Number of Shakes Required Before Shake is Triggered |
-|`HapticsDurationInMilliseconds` | `TimeSpan` | Get or Set the Value Of Haptics Duration |
-|`ShakeDetected` | `event` | Shake Detected Event for Detecting Whether User Shaked the Device |
-|`StartListening()` | `method` | Start listening for Shake Event |
-|`StopListening()` | `method` | Stop Already Monitoring Shake Event |
+|`IsSupported` | ```csharp `bool` ``` | Indicating Whether ShakeDetector is Supported on this Device |
+|`IsMonitoring` | ```csharp `bool` ``` | Indicating Whether ShakeDetector is Already Monitoring |
+|`IsHapticsSupported` |```csharp  `bool` ``` | Indicating Whether Haptics Supported in this Device |
+|`IsHapticsEnabled` | ```csharp `bool` ``` | Indicating Whether Haptics is Enabled |
+|`ShakeThresholdGravity` | ```csharp `double` ``` | Get or Set the Value of Shake Detection Threshold |
+|`ShakeIntervalInMilliseconds` | ```csharp `TimeSpan` ``` | Get or Set the value of Minimum Delay betweem Shakes |
+|`ShakeResetIntervalInMilliseconds` | ```csharp `TimeSpan` ``` | Get or Set the Value of Shake Reset Interval in Milliseconds |
+|`MinimumShakeCount` | ```csharp `int` ```| Get or Set the Value for Number of Shakes Required Before Shake is Triggered |
+|`HapticsDurationInMilliseconds` | ```csharp `TimeSpan` ``` | Get or Set the Value Of Haptics Duration |
+|`ShakeDetected` | ```csharp `event` ``` | Shake Detected Event for Detecting Whether User Shaked the Device |
+|`StartListening()` | ```csharp `Method` ``` | Start listening for Shake Event |
+|`StopListening()` |```csharp `Method()` ``` | Stop Already Monitoring Shake Event |
 
 
 # License

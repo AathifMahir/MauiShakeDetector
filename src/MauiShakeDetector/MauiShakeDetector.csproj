@@ -31,7 +31,7 @@
 		<RepositoryUrl>https://github.com/AathifMahir/MauiIcons</RepositoryUrl>
 		<DefineConstants>$(DefineConstants);</DefineConstants>
 		<UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
-		<Title>MauiShakeDetector</Title>
+		<Title>Maui Shake Detector</Title>
 		<Description>Maui Shake Detector Shake Event Detector Library with Lots of Customization like GForce Tuning, Shake Intervals and Haptics for Shake Events</Description>
 		<PackageIcon>icon.png</PackageIcon>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>

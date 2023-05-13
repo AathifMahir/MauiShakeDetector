@@ -12,13 +12,13 @@ public interface IShakeDetector
     bool IsMonitoring { get; }
 
     /// <summary>
-    /// Get or Set the Value of Shake detection Threshold
+    /// Get or Set the Value of Shake Detection Threshold
     /// In Summary The Gforce Value for Shake To Be Detected
     /// </summary>
     double ShakeThresholdGravity { get;  set; }
 
     /// <summary>
-    /// Get or Set the value of Minimum Delay betweem shakes
+    /// Get or Set the value of Minimum Delay betweem Shakes
     /// </summary>
     TimeSpan ShakeIntervalInMilliseconds { get;  set; }
 
@@ -32,11 +32,11 @@ public interface IShakeDetector
     /// </summary>
     int MinimumShakeCount { get;  set; }
     /// <summary>
-    /// Gets a Value Indicating Whether haptics enabled or not
+    /// Gets a Value Indicating Whether Haptics is Enabled or not
     /// </summary>
     bool IsHapticsEnabled { get; set; }
     /// <summary>
-    /// Gets a Value Indicating Whether haptics supported in the device or not
+    /// Gets a Value Indicating Whether Haptics Supported in this Device
     /// </summary>
     bool IsHapticsSupported { get;}
     /// <summary>

@@ -46,4 +46,14 @@
 		<PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/ReleaseNotes.txt"))</PackageReleaseNotes>
 	</PropertyGroup>
 
+	<PropertyGroup>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="readme.md" Pack="true" PackagePath="\" />
+		<None Include="ReadMe.txt" pack="true" PackagePath="." />
+		<None Include="..\..\images\icon.png" PackagePath="icon.png" Pack="true" />
+	</ItemGroup>
+
 </Project>

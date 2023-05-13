@@ -1,4 +1,5 @@
-![icon_with_text](https://github.com/AathifMahir/MauiShakeDetector/assets/17165402/fb0b1ebe-91c2-4188-98ba-c3793dfea0cc)
+
+<img src="https://github.com/AathifMahir/MauiShakeDetector/blob/master/images/icon_with_text.png" alt="MauiIcons_logo" height=175 width=815>
 
 
 # .Net Maui Shake Detector

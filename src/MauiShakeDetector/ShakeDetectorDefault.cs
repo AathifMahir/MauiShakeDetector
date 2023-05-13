@@ -4,30 +4,36 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
     // Properties
     public bool IsSupported { get; set; } = Accelerometer.Default.IsSupported;
     public bool IsMonitoring { get; set; } = Accelerometer.Default.IsMonitoring;
-    public double ShakeThresholdGravity { get; set; } = 2.1;
-    public TimeSpan ShakeIntervalInMilliseconds { get; set; } = new TimeSpan(500);
-    public TimeSpan ShakeCountResetTime { get; set; } = new TimeSpan(3000);
+    public double ShakeThresholdGravity { get; set; } = 1.9;
+    public TimeSpan ShakeIntervalInMilliseconds { get; set; } = TimeSpan.FromMilliseconds(500);
+    public TimeSpan ShakeResetIntervalInMilliseconds { get; set; } = TimeSpan.FromMilliseconds(3000);
     public int MinimumShakeCount { get; set; } = 1;
     public bool IsHapticsEnabled { get; set; } = true;
     public bool IsHapticsSupported { get; set; } = Vibration.Default.IsSupported;
-    public TimeSpan HapticsDurationInMilliseconds { get; set; } = new TimeSpan(3000);
+    public TimeSpan HapticsDurationInMilliseconds { get; set; } = TimeSpan.FromMilliseconds(1700);
 
 
     // Private Fields
+
     TimeSpan currentShakeTimeInMilliseconds = new(DateTime.Now.Ticks);
+
     int currentShakeCount = 0;
+
+    static bool useSyncContext;
+
+    // Event Handlers
 
     public event EventHandler<ShakeDetectedEventArgs> ShakeDetected;
 
-    public void StartListening()
+    public void StartListening(SensorSpeed sensorSpeed = SensorSpeed.Default)
     {
         if (!Accelerometer.Default.IsSupported) throw new FeatureNotSupportedException("Shake Detector is Not Supported in Your Device");
         if (Accelerometer.Default.IsMonitoring) throw new InvalidOperationException("Shake Detector is Already Started");
 
-        Accelerometer.Default.Start(SensorSpeed.Default);
+        Accelerometer.Default.Start(sensorSpeed);
+        useSyncContext = sensorSpeed == SensorSpeed.Default || sensorSpeed == SensorSpeed.UI;
 
         Accelerometer.Default.ReadingChanged += Accelerometer_ReadingChanged;
-        
     }
 
     private void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
@@ -44,7 +50,7 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
 
             if (currentShakeTimeInMilliseconds + ShakeIntervalInMilliseconds > now) return;
 
-            if (currentShakeTimeInMilliseconds + ShakeCountResetTime < now) currentShakeCount = 0;
+            if (currentShakeTimeInMilliseconds + ShakeResetIntervalInMilliseconds < now) currentShakeCount = 0;
 
             currentShakeTimeInMilliseconds = now;
             currentShakeCount++;
@@ -55,6 +61,12 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
             {
                 if (!IsHapticsSupported) throw new FeatureNotSupportedException("Haptics is Not Supported in Your Device");
                 Vibration.Default.Vibrate(HapticsDurationInMilliseconds);
+            }
+
+            if (useSyncContext)
+            {
+                MainThread.BeginInvokeOnMainThread(() => ShakeDetected?.Invoke(this, new ShakeDetectedEventArgs(currentShakeCount)));
+                return;
             }
             ShakeDetected?.Invoke(this, new ShakeDetectedEventArgs(currentShakeCount));
         }

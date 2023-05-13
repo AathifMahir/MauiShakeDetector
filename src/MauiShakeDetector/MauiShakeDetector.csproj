@@ -17,12 +17,33 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
-	<ItemGroup>
-	  <Folder Include="Platforms\Android\" />
-	  <Folder Include="Platforms\iOS\" />
-	  <Folder Include="Platforms\MacCatalyst\" />
-	  <Folder Include="Platforms\Tizen\" />
-	  <Folder Include="Platforms\Windows\" />
-	</ItemGroup>
+	<PropertyGroup>
+		<GitInfoReportImportance>high</GitInfoReportImportance>
+		<PackageId>AathifMahir.Maui.MauiShakeDetector</PackageId>
+		<Summary>Maui Shake Detector - Shake Event Detector Library with Lots of Customization and Haptics Support</Summary>
+		<Authors>Aathif Mahir</Authors>
+		<Owners>Aathif Mahir</Owners>
+		<NeutralLanguage>en</NeutralLanguage>
+		<Product>Maui Shake Detector (net6.0)(net7.0)</Product>
+		<Copyright>© Aathif Mahir. All rights reserved.</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/AathifMahir/MauiIcons</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/AathifMahir/MauiIcons</RepositoryUrl>
+		<DefineConstants>$(DefineConstants);</DefineConstants>
+		<UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
+		<Title>MauiShakeDetector</Title>
+		<Description>Maui Shake Detector Shake Event Detector Library with Lots of Customization like GForce Tuning, Shake Intervals and Haptics for Shake Events</Description>
+		<PackageIcon>icon.png</PackageIcon>
+		<Product>$(AssemblyName) ($(TargetFramework))</Product>
+		<AssemblyVersion>0.1.0.0</AssemblyVersion>
+		<AssemblyFileVersion>0.1.0.0</AssemblyFileVersion>
+		<Version>0.1.0-preview1</Version>
+		<PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageTags>Maui,Shake,ShakeDetector,MauiShake,</PackageTags>
+		<Configurations>Debug;Release</Configurations>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/ReleaseNotes.txt"))</PackageReleaseNotes>
+	</PropertyGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-# .Net Maui Icons
+# .Net Maui Shake Detector
 
 Maui Shake Detector is Shake Event Detector Library Which Detects Shake Event from Android, iOS and etc. with Options to Customize the Shake Gforce and Shake Intervals and Haptics and Haptics Duration and etc.
 

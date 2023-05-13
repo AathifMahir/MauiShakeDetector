@@ -3,40 +3,60 @@ public interface IShakeDetector
 {
     
     /// <summary>
-    /// Gets a value indicating whether ShakeDetector is supported on this device
+    /// Gets a Value Indicating Whether ShakeDetector is Supported on this Device
     /// </summary>
     bool IsSupported { get; }
     /// <summary>
-    /// Gets a value indicating whether ShakeDetector is already monitoring
+    /// Gets a Value Indicating Whether ShakeDetector is Already Monitoring
     /// </summary>
     bool IsMonitoring { get; }
 
     /// <summary>
-    /// Shake detection threshold, In short the value of gforce
+    /// Get or Set the Value of Shake Detection Threshold
+    /// In Summary The Gforce Value for Shake To Be Detected
     /// </summary>
     double ShakeThresholdGravity { get;  set; }
 
-    // Minimum Delay betweem shakes
+    /// <summary>
+    /// Get or Set the value of Minimum Delay betweem Shakes
+    /// </summary>
     TimeSpan ShakeIntervalInMilliseconds { get;  set; }
 
-    // Shake counter reset time
-    TimeSpan ShakeCountResetTime { get;  set; }
+    /// <summary>
+    /// Get or Set the Value of Shake Reset Interval in Milliseconds
+    /// </summary>
+    TimeSpan ShakeResetIntervalInMilliseconds { get;  set; }
 
-    // Number of shakes required before shake is triggered
+    /// <summary>
+    /// Get or Set the Value for Number of Shakes Required Before Shake is Triggered
+    /// </summary>
     int MinimumShakeCount { get;  set; }
-    // Whether haptics enabled or not
+    /// <summary>
+    /// Gets a Value Indicating Whether Haptics is Enabled or not
+    /// </summary>
     bool IsHapticsEnabled { get; set; }
-    // Whether haptics supported in the device or not
+    /// <summary>
+    /// Gets a Value Indicating Whether Haptics Supported in this Device
+    /// </summary>
     bool IsHapticsSupported { get;}
-    // Duration of haptics
+    /// <summary>
+    /// Get or Set the Value Of Haptics Duration
+    /// </summary>
     TimeSpan HapticsDurationInMilliseconds { get; set; } 
-    // Shake detected event for detecting whether user shaked the device
+    /// <summary>
+    /// Shake Detected Event for Detecting Whether User Shaked the Device
+    /// </summary>
 #nullable enable
     event EventHandler<ShakeDetectedEventArgs>? ShakeDetected;
 #nullable disable
 
-    // Start listening for shake event
-    void StartListening();
-    // Stop already monitoring shake event
+    /// <summary>
+    /// Start listening for Shake Event
+    /// </summary>
+    /// <param name="sensorSpeed"></param>
+    void StartListening(SensorSpeed sensorSpeed = SensorSpeed.Default);
+    /// <summary>
+    /// Stop Already Monitoring Shake Event
+    /// </summary>
     void StopListening();
 }

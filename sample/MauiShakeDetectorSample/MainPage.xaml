@@ -25,7 +25,7 @@
                 x:Name="TxtShakeStatus"
                 Text="Welcome to .NET Multi-platform App UI"
                 SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                SemanticProperties.Description="Waiting for Shake Event"
                 FontSize="18"
                 HorizontalOptions="Center" />
 
@@ -35,7 +35,7 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="BtnStartListening_Clicked"
                 HorizontalOptions="Center" />
-
+            
         </VerticalStackLayout>
     </ScrollView>
 

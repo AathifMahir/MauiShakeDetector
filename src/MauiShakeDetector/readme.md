@@ -67,7 +67,7 @@ using MauiShakeDetector;
 # Parameters
 
 | Parameters | Type | Description |
-|               :---:               |    :---:   |            :---:                                                                               |
+|               :---               |    :---:   |            :---:                                                                               |
 | **IsSupported** | `bool` | Indicating Whether ShakeDetector is Supported on this Device |
 | **IsMonitoring** | `bool` | Indicating Whether ShakeDetector is Already Monitoring |
 | **IsHapticsSupported** | `bool` | Indicating Whether Haptics Supported in this Device |

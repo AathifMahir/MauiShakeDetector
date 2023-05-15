@@ -53,7 +53,14 @@ public interface IShakeDetector
     /// <summary>
     /// Start listening for Shake Event
     /// </summary>
-    /// <param name="sensorSpeed"></param>
+    /// <param name="sensorSpeed">
+    /// Speed to monitor the Shake Events.
+    /// </param>
+    /// <remarks>
+    /// Will throw Microsoft.Maui.ApplicationModel.FeatureNotSupportedException if MauiShakeDetector.IShakeDetector.IsSupported
+    /// is false. Will throw System.InvalidOperationException if MauiShakeDetector.IShakeDetector.IsMonitoring
+    /// is true.
+    /// </remarks>
     void StartListening(SensorSpeed sensorSpeed = SensorSpeed.Default);
     /// <summary>
     /// Stop Already Monitoring Shake Event

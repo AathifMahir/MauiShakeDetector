@@ -37,7 +37,7 @@
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
 		<AssemblyVersion>0.1.0.0</AssemblyVersion>
 		<AssemblyFileVersion>0.1.0.0</AssemblyFileVersion>
-		<Version>0.1.0-preview1</Version>
+		<Version>0.1.0</Version>
 		<PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageTags>Maui,Shake,ShakeDetector,MauiShake,</PackageTags>

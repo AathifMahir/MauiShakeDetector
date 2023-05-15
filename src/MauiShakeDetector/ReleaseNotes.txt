@@ -1,2 +1,6 @@
-﻿﻿v0.1.0-preview1
+﻿﻿v0.1.0
+• First Stable Build
+• Enhancements for Comments
+
+v0.1.0-preview1
 • First Preview Build

@@ -1,7 +1,9 @@
 
 <img src="https://github.com/AathifMahir/MauiShakeDetector/blob/master/images/icon_with_text.png" alt="MauiIcons_logo" height=200 width=450>
 
-[![AathifMahir.Maui.MauiShakeDetector](https://img.shields.io/nuget/v/AathifMahir.Maui.MauiShakeDetector)](https://www.nuget.org/packages/AathifMahir.Maui.MauiShakeDetector/)
+|**Latest Stable** | **Latest Preview**|
+|  :---:     |    :---:   |
+|[![AathifMahir.Maui.MauiShakeDetector](https://img.shields.io/nuget/v/AathifMahir.Maui.MauiShakeDetector)](https://www.nuget.org/packages/AathifMahir.Maui.MauiShakeDetector/) | [![AathifMahir.Maui.MauiShakeDetector](https://img.shields.io/nuget/vpre/AathifMahir.Maui.MauiShakeDetector)](https://nuget.org/packages/AathifMahir.Maui.MauiShakeDetector/absoluteLatest) |
 
 # .Net Maui Shake Detector
 

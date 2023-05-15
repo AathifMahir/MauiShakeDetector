@@ -71,7 +71,7 @@ using MauiShakeDetector;
 | **IsSupported** | `bool` | Indicating Whether ShakeDetector is Supported on this Device |
 | **IsMonitoring** | `bool` | Indicating Whether ShakeDetector is Already Monitoring |
 | **IsHapticsSupported** | `bool` | Indicating Whether Haptics Supported in this Device |
-| **IsHapticsEnabled** | `bool` | Indicating Whether Haptics is Enabled |
+| **IsHapticsEnabled** | `bool` | Get or Set the Value Indicating Whether Haptics is Enabled or Not |
 | **ShakeThresholdGravity** | `double` | Get or Set the Value of Shake Detection Threshold |
 | **ShakeIntervalInMilliseconds** | `TimeSpan` | Get or Set the value of Minimum Delay betweem Shakes |
 | **ShakeResetIntervalInMilliseconds** | `TimeSpan` | Get or Set the Value of Shake Reset Interval in Milliseconds |
@@ -79,6 +79,7 @@ using MauiShakeDetector;
 | **HapticsDurationInMilliseconds** | `TimeSpan` | Get or Set the Value Of Haptics Duration |
 | **ShakeDetected** | `event` | Shake Detected Event for Detecting Whether User Shaked the Device |
 | **StartListening()** | `method` | Start listening for Shake Event |
+| **SensorSpeed** | `enum` | Set the value for Shake Detection Speed When Using Start Listning Method |
 | **StopListening()** | `method` | Stop Already Monitoring Shake Event |
 
 

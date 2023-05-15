@@ -10,20 +10,20 @@
             VerticalOptions="Center">
 
             <Image
-                Source="dotnet_bot.png"
+                Source="icon_with_text.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Hello, World!"
+                Text="Maui Shake Detector"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
 
             <Label
-                x:Name="TxtShakeStatus"
-                Text="Welcome to .NET Multi-platform App UI"
+                
+                Text="Welcome to Maui Shake Detector Sample"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Waiting for Shake Event"
                 FontSize="18"
@@ -35,7 +35,9 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="BtnStartListening_Clicked"
                 HorizontalOptions="Center" />
-            
+
+            <Label x:Name="TxtShakeStatus" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{StaticResource Primary}" TextColor="White" Padding="12,12,12,12" Text="Not Yet Listening" />
+
         </VerticalStackLayout>
     </ScrollView>
 

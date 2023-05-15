@@ -9,7 +9,7 @@ Maui Shake Detector is Shake Event Detector Library Which Detects Shake Event fr
 
 # Permission
 
-In order to use Maui Shake Detector, You need to Specific permission to Android
+In order to use Maui Shake Detector, You need Specific permission for Android
 
 **Android**
 

@@ -35,9 +35,9 @@
 		<Description>Maui Shake Detector Shake Event Detector Library with Lots of Customization like GForce Tuning, Shake Intervals and Haptics for Shake Events</Description>
 		<PackageIcon>icon.png</PackageIcon>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
-		<AssemblyVersion>0.1.0.0</AssemblyVersion>
-		<AssemblyFileVersion>0.1.0.0</AssemblyFileVersion>
-		<Version>0.1.0</Version>
+		<AssemblyVersion>0.2.0.0</AssemblyVersion>
+		<AssemblyFileVersion>0.2.0.0</AssemblyFileVersion>
+		<Version>0.2.0</Version>
 		<PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageTags>Maui,Shake,ShakeDetector,MauiShake,</PackageTags>

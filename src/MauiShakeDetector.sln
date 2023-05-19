@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiShakeDetector", "MauiSh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiShakeDetectorSample", "..\sample\MauiShakeDetectorSample\MauiShakeDetectorSample.csproj", "{A7020180-920D-42F8-93FB-BA36927F8B37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiShakeDetector.UnitTest", "MauiShakeDetector.UnitTest\MauiShakeDetector.UnitTest.csproj", "{9BB800E4-ACE7-49DB-BDA9-6626AA36F0DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{A7020180-920D-42F8-93FB-BA36927F8B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7020180-920D-42F8-93FB-BA36927F8B37}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A7020180-920D-42F8-93FB-BA36927F8B37}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9BB800E4-ACE7-49DB-BDA9-6626AA36F0DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BB800E4-ACE7-49DB-BDA9-6626AA36F0DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BB800E4-ACE7-49DB-BDA9-6626AA36F0DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BB800E4-ACE7-49DB-BDA9-6626AA36F0DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -76,6 +76,7 @@ using MauiShakeDetector;
 | **ShakeIntervalInMilliseconds** | `TimeSpan` | Get or Set the value of Minimum Delay betweem Shakes |
 | **ShakeResetIntervalInMilliseconds** | `TimeSpan` | Get or Set the Value of Shake Reset Interval in Milliseconds |
 | **MinimumShakeCount** | `int` | Get or Set the Value for Number of Shakes Required Before Shake is Triggered |
+| **AutoStopAfterNoShakes** | `int` |  Gets or sets the value of Auto Stop listening to shake event after number of shakes triggered |
 | **HapticsDurationInMilliseconds** | `TimeSpan` | Get or Set the Value Of Haptics Duration |
 | **ShakeDetected** | `event` | Shake Detected Event for Detecting Whether User Shaked the Device |
 | **StartListening()** | `method` | Start listening for Shake Event |

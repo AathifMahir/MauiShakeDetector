@@ -1,4 +1,8 @@
-﻿﻿v0.1.0
+﻿﻿v0.2.0
+• Added New Property to Auto Stop Listening to Shake Event "AutoStopAfterNoShakes"
+• Enhancements for Comments
+
+﻿v0.1.0
 • First Stable Build
 • Enhancements for Comments
 

@@ -79,7 +79,7 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
 
     private void AutoStopAfterNoShakeEvents()
     {
-        if(currentTriggeredShakesCount >= AutoStopAfterNoShakes)
+        if(currentTriggeredShakesCount != 0 && currentTriggeredShakesCount >= AutoStopAfterNoShakes)
         {
             StopListening();
         }

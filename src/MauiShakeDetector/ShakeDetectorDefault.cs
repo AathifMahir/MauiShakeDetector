@@ -11,13 +11,14 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
     public bool IsHapticsEnabled { get; set; } = true;
     public bool IsHapticsSupported { get; set; } = Vibration.Default.IsSupported;
     public TimeSpan HapticsDurationInMilliseconds { get; set; } = TimeSpan.FromMilliseconds(1700);
-
+    public int AutoStopAfterNoShakes { get; set; } = 0;
 
     // Private Fields
 
     TimeSpan currentShakeTimeInMilliseconds = new(DateTime.Now.Ticks);
 
     int currentShakeCount = 0;
+    int currentTriggeredShakesCount = 0;
 
     static bool useSyncContext;
 
@@ -44,31 +45,43 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
 
         double gForce = Math.Sqrt(x * x + y * y + z * z);
 
-        if (gForce > ShakeThresholdGravity)
+        if (gForce < ShakeThresholdGravity) return;
+
+        TimeSpan now = new(DateTime.Now.Ticks);
+
+        if (currentShakeTimeInMilliseconds + ShakeIntervalInMilliseconds > now) return;
+
+        if (currentShakeTimeInMilliseconds + ShakeResetIntervalInMilliseconds < now) currentShakeCount = 0;
+
+        currentShakeTimeInMilliseconds = now;
+        currentShakeCount++;
+
+        if (currentShakeCount < MinimumShakeCount) return;
+
+        if (IsHapticsEnabled)
         {
-            TimeSpan now = new(DateTime.Now.Ticks);
+            if (!IsHapticsSupported) throw new FeatureNotSupportedException("Haptics is Not Supported in Your Device");
+            Vibration.Default.Vibrate(HapticsDurationInMilliseconds);
+        }
 
-            if (currentShakeTimeInMilliseconds + ShakeIntervalInMilliseconds > now) return;
+        if (useSyncContext)
+        {
+            currentTriggeredShakesCount++;
+            MainThread.BeginInvokeOnMainThread(() => ShakeDetected?.Invoke(this, new ShakeDetectedEventArgs(currentShakeCount)));
+            AutoStopAfterNoShakeEvents();
+            return;
+        }
 
-            if (currentShakeTimeInMilliseconds + ShakeResetIntervalInMilliseconds < now) currentShakeCount = 0;
+        currentTriggeredShakesCount++;
+        ShakeDetected?.Invoke(this, new ShakeDetectedEventArgs(currentShakeCount));
+        AutoStopAfterNoShakeEvents();
+    }
 
-            currentShakeTimeInMilliseconds = now;
-            currentShakeCount++;
-
-            if (currentShakeCount < MinimumShakeCount) return;
-
-            if (IsHapticsEnabled)
-            {
-                if (!IsHapticsSupported) throw new FeatureNotSupportedException("Haptics is Not Supported in Your Device");
-                Vibration.Default.Vibrate(HapticsDurationInMilliseconds);
-            }
-
-            if (useSyncContext)
-            {
-                MainThread.BeginInvokeOnMainThread(() => ShakeDetected?.Invoke(this, new ShakeDetectedEventArgs(currentShakeCount)));
-                return;
-            }
-            ShakeDetected?.Invoke(this, new ShakeDetectedEventArgs(currentShakeCount));
+    private void AutoStopAfterNoShakeEvents()
+    {
+        if(currentTriggeredShakesCount >= AutoStopAfterNoShakes)
+        {
+            StopListening();
         }
     }
 

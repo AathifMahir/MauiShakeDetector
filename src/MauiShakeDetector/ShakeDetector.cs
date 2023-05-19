@@ -10,6 +10,7 @@ public static class ShakeDetector
     public static bool IsHapticsSupported => Default.IsHapticsSupported;
     public static bool IsHapticsEnabled => Default.IsHapticsEnabled;
     public static TimeSpan HapticsDurationInMilliseconds => Default.HapticsDurationInMilliseconds;
+    public static int AutoStopAfterNoShakes => Default.AutoStopAfterNoShakes;
 
     public static event EventHandler<ShakeDetectedEventArgs> ShakeDetected
     {

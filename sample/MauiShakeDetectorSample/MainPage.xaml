@@ -36,6 +36,14 @@
                 Clicked="BtnStartListening_Clicked"
                 HorizontalOptions="Center" />
 
+            <Button
+                Margin="0,12,0,0"
+                x:Name="BtnStopListening"
+                Text="Stop Listening"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="BtnStopListening_Clicked"
+                HorizontalOptions="Center" />
+
             <Label x:Name="TxtShakeStatus" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="{StaticResource Primary}" TextColor="White" Padding="12,12,12,12" Text="Not Yet Listening" />
 
         </VerticalStackLayout>

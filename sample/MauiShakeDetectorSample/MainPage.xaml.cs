@@ -1,4 +1,5 @@
 ﻿using MauiShakeDetector;
+using System.Diagnostics;
 
 namespace MauiShakeDetectorSample;
 
@@ -9,8 +10,6 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
     }
-
-    bool isListening = false;
     private void BtnStartListening_Clicked(object sender, EventArgs e)
     {
         if (!ShakeDetector.Default.IsSupported)
@@ -23,27 +22,27 @@ public partial class MainPage : ContentPage
             TxtShakeStatus.Text = "Shake Detector is ALready Running";
             return;
         }
-        if (!isListening)
-        {
-            BtnStartListening.Text = "Stop Listening";
-            isListening = true;
 
-            ShakeDetector.Default.StartListening();
-            ShakeDetector.Default.ShakeDetected += Detector_ShakeDetected;
-            return;
-        }
-
-        BtnStartListening.Text = "Start Listening";
-        isListening = false;
-        ShakeDetector.Default.StopListening();
-        ShakeDetector.Default.ShakeDetected -= Detector_ShakeDetected;
-        TxtShakeStatus.Text = "Shake Detector is Stop Listening";
+        TxtShakeStatus.Text = "Started Listening";
+        //ShakeDetector.Default.AutoStopAfterNoShakes = 5;
+        ShakeDetector.Default.StartListening();
+        ShakeDetector.Default.ShakeDetected += Detector_ShakeDetected;
     }
 
     private void Detector_ShakeDetected(object sender, ShakeDetectedEventArgs e)
     {
-        TxtShakeStatus.Text += $" and No of Shakes {e.NoOfShakes}";
+        TxtShakeStatus.Text = $"No of Shakes {e.NoOfShakes}";
     }
 
+    private void BtnStopListening_Clicked(object sender, EventArgs e)
+    {
+        
+        if(ShakeDetector.Default.IsMonitoring)
+        {
+            ShakeDetector.Default.StopListening();
+            ShakeDetector.Default.ShakeDetected -= Detector_ShakeDetected;
+            TxtShakeStatus.Text = "Shake Detector is Stop Listening";
+        }
+    }
 }
 

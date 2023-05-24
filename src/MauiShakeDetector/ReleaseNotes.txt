@@ -1,4 +1,7 @@
-﻿﻿v0.2.0
+﻿v0.3.0
+• Added .Net 6 Support
+
+﻿v0.2.0
 • Added New Property to Auto Stop Listening to Shake Event "AutoStopAfterNoShakes"
 • Enhancements for Comments
 

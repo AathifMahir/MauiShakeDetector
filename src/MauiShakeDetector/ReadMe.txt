@@ -7,7 +7,7 @@ In order to use the .NET MAUI Shake Detector you need to add below permission fo
 
 ## Permission
 
-In order to use Maui Shake Detector, You need to Specific permission to Android
+In order to use Maui Shake Detector, You need Specific permission for Android
 
 
 **Android**

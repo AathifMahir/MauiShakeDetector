@@ -1,4 +1,6 @@
-﻿namespace MauiShakeDetector;
+﻿using System.Windows.Input;
+
+namespace MauiShakeDetector;
 public interface IShakeDetector
 {
 
@@ -66,6 +68,14 @@ public interface IShakeDetector
 #nullable enable
     event EventHandler<ShakeDetectedEventArgs>? ShakeDetected;
 #nullable disable
+
+    /// <summary>
+    /// Shake Detected Command for detecting whether user shook the device
+    /// </summary>
+    /// <remarks>
+    /// Shake Detected Command will return int value of number of shakes detected as CommandParameter
+    /// </remarks>
+    ICommand ShakeDetectedCommand { get; set; }
 
     /// <summary>
     /// Start listening for shake event

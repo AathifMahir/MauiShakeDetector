@@ -1,4 +1,6 @@
-﻿namespace MauiShakeDetector;
+﻿using System.Windows.Input;
+
+namespace MauiShakeDetector;
 public static class ShakeDetector
 {
     public static bool IsSupported => Default.IsSupported;
@@ -17,6 +19,7 @@ public static class ShakeDetector
         add => Default.ShakeDetected += value;
         remove => Default.ShakeDetected -= value;
     }
+    public static ICommand ShakeDetectedCommand => Default.ShakeDetectedCommand;
 
     public static void StartListening(SensorSpeed sensorSpeed) => Default.StartListening(sensorSpeed);
 

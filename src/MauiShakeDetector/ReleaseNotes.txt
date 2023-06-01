@@ -1,4 +1,7 @@
-﻿v0.3.0
+﻿v0.4.0
+• Added Command Support
+
+v0.3.0
 • Added .Net 6 Support
 
 ﻿v0.2.0

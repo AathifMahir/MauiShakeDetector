@@ -85,6 +85,7 @@ using MauiShakeDetector;
 | **MinimumShakeCount** | `int` | Get or Set the Value for Number of Shakes Required Before Shake is Triggered |
 | **AutoStopAfterNoShakes** | `int` |  Gets or sets the value of Auto Stop listening to shake event after number of shakes triggered |
 | **HapticsDurationInMilliseconds** | `TimeSpan` | Get or Set the Value Of Haptics Duration |
+| **ShakeDetectedCommand** | `ICommand` | Shake Detected Command for Detecting Whether User Shooked the Device |
 | **ShakeDetected** | `event` | Shake Detected Event for Detecting Whether User Shaked the Device |
 | **StartListening()** | `method` | Start listening for Shake Event |
 | **SensorSpeed** | `enum` | Set the value for Shake Detection Speed When Using Start Listning Method |

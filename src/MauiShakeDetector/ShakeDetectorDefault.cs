@@ -1,4 +1,6 @@
-﻿namespace MauiShakeDetector;
+﻿using System.Windows.Input;
+
+namespace MauiShakeDetector;
 internal sealed class ShakeDetectorDefault : IShakeDetector
 {
     // Properties
@@ -25,6 +27,7 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
     // Event Handlers
 
     public event EventHandler<ShakeDetectedEventArgs> ShakeDetected;
+    public ICommand ShakeDetectedCommand { get; set; }
 
     public void StartListening(SensorSpeed sensorSpeed = SensorSpeed.Default)
     {
@@ -73,13 +76,17 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
         }
 
         currentTriggeredShakesCount++;
+
         ShakeDetected?.Invoke(this, new ShakeDetectedEventArgs(currentShakeCount));
+        if (ShakeDetectedCommand is not null && ShakeDetectedCommand.CanExecute(currentShakeCount))
+            ShakeDetectedCommand.Execute(currentShakeCount);
+
         AutoStopAfterNoShakeEvents();
     }
 
     private void AutoStopAfterNoShakeEvents()
     {
-        if(AutoStopAfterNoShakes != 0 && currentTriggeredShakesCount >= AutoStopAfterNoShakes)
+        if(AutoStopAfterNoShakes is not 0 && currentTriggeredShakesCount >= AutoStopAfterNoShakes)
         {
             currentTriggeredShakesCount = 0;
             StopListening();

@@ -78,7 +78,7 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
         currentTriggeredShakesCount++;
 
         ShakeDetected?.Invoke(this, new ShakeDetectedEventArgs(currentShakeCount));
-        if (ShakeDetectedCommand != null && ShakeDetectedCommand.CanExecute(currentShakeCount))
+        if (ShakeDetectedCommand is not null && ShakeDetectedCommand.CanExecute(currentShakeCount))
             ShakeDetectedCommand.Execute(currentShakeCount);
 
         AutoStopAfterNoShakeEvents();
@@ -86,7 +86,7 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
 
     private void AutoStopAfterNoShakeEvents()
     {
-        if(AutoStopAfterNoShakes != 0 && currentTriggeredShakesCount >= AutoStopAfterNoShakes)
+        if(AutoStopAfterNoShakes is not 0 && currentTriggeredShakesCount >= AutoStopAfterNoShakes)
         {
             currentTriggeredShakesCount = 0;
             StopListening();

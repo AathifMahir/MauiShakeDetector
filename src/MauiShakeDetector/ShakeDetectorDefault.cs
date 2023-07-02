@@ -24,7 +24,11 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
 
     static bool useSyncContext;
 
-    // Event Handlers
+    // Const
+
+    const int defaultShakeCount = 0;
+
+    // Event & Commands
 
     public event EventHandler<ShakeDetectedEventArgs> ShakeDetected;
     public ICommand ShakeDetectedCommand { get; set; }
@@ -40,7 +44,7 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
         Accelerometer.Default.ReadingChanged += Accelerometer_ReadingChanged;
     }
 
-    private void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
+    void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
     {
         float y = e.Reading.Acceleration.Y;
         float x = e.Reading.Acceleration.X;
@@ -84,11 +88,11 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
         AutoStopAfterNoShakeEvents();
     }
 
-    private void AutoStopAfterNoShakeEvents()
+    void AutoStopAfterNoShakeEvents()
     {
-        if(AutoStopAfterNoShakes is not 0 && currentTriggeredShakesCount >= AutoStopAfterNoShakes)
+        if(AutoStopAfterNoShakes is not defaultShakeCount && currentTriggeredShakesCount >= AutoStopAfterNoShakes)
         {
-            currentTriggeredShakesCount = 0;
+            currentTriggeredShakesCount = defaultShakeCount;
             StopListening();
         }
     }
@@ -98,7 +102,7 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
         if (Accelerometer.Default.IsMonitoring)
         {
             Accelerometer.Default.ReadingChanged -= Accelerometer_ReadingChanged;
-            currentTriggeredShakesCount = 0;
+            currentTriggeredShakesCount = defaultShakeCount;
             Accelerometer.Default.Stop();
         }
     }

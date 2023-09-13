@@ -1,4 +1,7 @@
-﻿v0.4.0
+﻿v1.0.0
+• Added Shake Stopped Event and Command for Auto Stop Enabled Scenerios
+
+v0.4.0
 • Added Command Support
 
 v0.3.0

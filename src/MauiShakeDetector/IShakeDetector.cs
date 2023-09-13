@@ -70,12 +70,23 @@ public interface IShakeDetector
 #nullable disable
 
     /// <summary>
+    /// Shake stopped event for detecting whether shake detector is stopped when Auto Stop is more than 0
+    /// </summary>
+#nullable enable
+    event EventHandler? ShakeStopped;
+#nullable disable
+    /// <summary>
     /// Shake Detected Command for detecting whether user shook the device
     /// </summary>
     /// <remarks>
     /// Shake Detected Command will return int value of number of shakes detected as CommandParameter
     /// </remarks>
     ICommand ShakeDetectedCommand { get; set; }
+
+    /// <summary>
+    /// Shake stopped command for detecting whether shake detector is stopped when Auto Stop is more than 0
+    /// </summary>
+    ICommand ShakeStoppedCommand { get; set; }
 
     /// <summary>
     /// Start listening for shake event

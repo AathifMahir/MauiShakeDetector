@@ -31,7 +31,10 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
     // Event & Commands
 
     public event EventHandler<ShakeDetectedEventArgs> ShakeDetected;
+    public event EventHandler ShakeStopped;
+
     public ICommand ShakeDetectedCommand { get; set; }
+    public ICommand ShakeStoppedCommand { get; set; }
 
     public void StartListening(SensorSpeed sensorSpeed = SensorSpeed.Default)
     {
@@ -93,7 +96,13 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
         if(AutoStopAfterNoShakes is not defaultShakeCount && currentTriggeredShakesCount >= AutoStopAfterNoShakes)
         {
             currentTriggeredShakesCount = defaultShakeCount;
+
             StopListening();
+
+            ShakeStopped?.Invoke(this, new EventArgs());
+            if (ShakeStoppedCommand is not null && ShakeStoppedCommand.CanExecute(null))
+                ShakeStoppedCommand.Execute(null);
+            
         }
     }
 

@@ -19,7 +19,14 @@ public static class ShakeDetector
         add => Default.ShakeDetected += value;
         remove => Default.ShakeDetected -= value;
     }
+
+    public static event EventHandler ShakeStopped
+    {
+        add => Default.ShakeStopped += value;
+        remove => Default.ShakeStopped -= value;
+    }
     public static ICommand ShakeDetectedCommand => Default.ShakeDetectedCommand;
+    public static ICommand ShakeStoppedCommand => Default.ShakeStoppedCommand;
 
     public static void StartListening(SensorSpeed sensorSpeed) => Default.StartListening(sensorSpeed);
 

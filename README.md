@@ -98,8 +98,6 @@ using MauiShakeDetector;
 
 Maui Shake Detector is Licensed Under [MIT License](https://github.com/AathifMahir/MauiShakeDetector/blob/master/LICENSE.txt).
 
-# Wanna Help
+# Contribute
 
-Want to Contribute this project, Feel free to Create an Issue or Else Want to Contribute to the Project on Resources, Feel Free to Donate Me Via Below Url or You just want use Package, Feel Free to Do So, No Worries!!!
-
-<a href="https://www.buymeacoffee.com/aathifmahir"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=aathifmahir&button_colour=6b4fdc&font_colour=ffffff&font_family=Lato&outline_colour=ffffff&coffee_colour=FFDD00" /></a>
+If you wish to contribute to this project, please don't hesitate to create an issue or request. Your input and feedback are highly appreciated. Additionally, if you're interested in supporting the project by providing resources or [**becoming a sponsor**](https://github.com/sponsors/AathifMahir), your contributions would be welcomed and instrumental in its continued development and success. Thank you for your interest in contributing to this endeavor.

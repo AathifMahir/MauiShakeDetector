@@ -67,12 +67,10 @@ public interface IShakeDetector
     /// </summary>
 #nullable enable
     event EventHandler<ShakeDetectedEventArgs>? ShakeDetected;
-#nullable disable
 
     /// <summary>
     /// Shake stopped event for detecting whether shake detector is stopped when Auto Stop is more than 0
     /// </summary>
-#nullable enable
     event EventHandler? ShakeStopped;
 #nullable disable
     /// <summary>

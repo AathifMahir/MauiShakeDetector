@@ -1,4 +1,10 @@
-﻿v1.0.0
+﻿v2.0.0
+• Dotnet 8 Support
+
+Breaking Changes
+- Removal of Dotnet 6 Support
+
+v1.0.0
 • Added Shake Stopped Event and Command for Auto Stop Enabled Scenerios
 
 v0.4.0

@@ -30,11 +30,11 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
 
     // Event & Commands
 
-    public event EventHandler<ShakeDetectedEventArgs> ShakeDetected;
-    public event EventHandler ShakeStopped;
+    public event EventHandler<ShakeDetectedEventArgs>? ShakeDetected;
+    public event EventHandler? ShakeStopped;
 
-    public ICommand ShakeDetectedCommand { get; set; }
-    public ICommand ShakeStoppedCommand { get; set; }
+    public ICommand ShakeDetectedCommand { get; set; } = default!;
+    public ICommand ShakeStoppedCommand { get; set; } = default!;
 
     public void StartListening(SensorSpeed sensorSpeed = SensorSpeed.Default)
     {
@@ -47,7 +47,7 @@ internal sealed class ShakeDetectorDefault : IShakeDetector
         Accelerometer.Default.ReadingChanged += Accelerometer_ReadingChanged;
     }
 
-    void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
+    void Accelerometer_ReadingChanged(object? sender, AccelerometerChangedEventArgs e)
     {
         float y = e.Reading.Acceleration.Y;
         float x = e.Reading.Acceleration.X;

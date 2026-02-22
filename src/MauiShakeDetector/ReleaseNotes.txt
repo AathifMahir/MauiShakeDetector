@@ -1,4 +1,11 @@
-﻿v2.0.0
+﻿v3.0.0
+• Added Support for .Net 10
+• Native AOT Support
+
+Breaking Changes
+- Removal of Dotnet 8 Support
+
+v2.0.0
 • Dotnet 8 Support
 
 Breaking Changes
